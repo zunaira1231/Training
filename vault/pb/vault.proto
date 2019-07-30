@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package pb;
+
+service Vault {
+	//rpc mean its a remote procedure call method
+	rpc Hash(HashRequest) returns (HashResponse) {}
+	rpc Validate(ValidateRequest) returns (ValidateResponse) {}
+}
+
+message HashRequest {
+	//type name position
+	//position induicate where in data stream the field appear
+	string password = 1;
+}
+
+message HashResponse {
+	//
+	string hash = 1;
+	string err = 2;
+}
+
+message ValidateRequest {
+	string password = 1;
+	string hash = 2;
+}
+
+message ValidateResponse {
+
+	bool valid = 1;
+}
