@@ -4,7 +4,7 @@ package pb;
 
 service Vault {
 	//rpc mean its a remote procedure call method
-	rpc Hash(HashRequest) returns (HashResponse) {}
+	rpc Hash(stream HashRequest) returns (stream ponse) {}
 	rpc Validate(ValidateRequest) returns (ValidateResponse) {}
 }
 
