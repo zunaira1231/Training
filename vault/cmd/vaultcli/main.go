@@ -1,4 +1,4 @@
-package vaultcli
+package main
 
 import (
 	"context"
