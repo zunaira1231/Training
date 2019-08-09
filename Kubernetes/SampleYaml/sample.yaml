@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Services
+metadata:
+ name: ServicesDemo
+ labels:
+   app: web
+spec:
+    type: Nodepod #type of services //nodepod,clusterIP,loadbalancer  
+    ports:
+       – targetPort: 80
+	 port: 80
+	 nodeport: 30008
+    selector: 
+         app: myapp
+         type: front-end
+ 
