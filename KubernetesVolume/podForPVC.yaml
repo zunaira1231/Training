@@ -1,0 +1,19 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: taskpvpod
+spec:
+  volumes:
+    - name: taskpv
+      persistentVolumeClaim:
+        claimName: taskpvclaim
+  containers:
+    - name: taskpvcontainer
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/usr/share/nginx/html"
+          name: taskpv
+#volume and volume mount name should be same 

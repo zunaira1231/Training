@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim 
+metadata: 
+       name: taskpvclaim 
+spec: 
+       resources:
+            requests:
+                storage: 15Gi 
+       accessModes:
+            - ReadWriteOnce
+       storageClassName: slow 
+
